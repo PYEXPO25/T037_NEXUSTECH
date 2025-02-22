@@ -6,9 +6,9 @@
 
 *Problem Statement ID – PY060*
 
-Formulate your problem statement clearly and concisely.
-         ➼ This problem statement mainly focuses on developing a facial recognition system to the process of attendance tracking in schools and colleges and the system can streamline the process by automatically detecting and verifying students' faces using 3D (depth) analysis.
-         ➼ Schools and colleges  struggle with maintaining accurate attendance record and analyzing presence effectively using conventional methods.
+PROBLEM STATEMENT:
+          This problem statement mainly focuses on developing a facial recognition system to the process of attendance tracking in schools and colleges and the system can streamline the process by automatically detecting and verifying students' faces using 3D (depth) analysis.
+          Schools and colleges  struggle with maintaining accurate attendance record and analyzing presence effectively using conventional methods.
          
 
 ---
@@ -16,9 +16,9 @@ Formulate your problem statement clearly and concisely.
 ## Overview
 
 Provide an overview of the project, its purpose, and what it aims to achieve along with proposed solution
-      ➼ This facial recognition system uses camera to capture images of the students using 3D depth and motion analysis and matches those images with the students image in the database to confirm their presence.
-      ➼ The output is connected to the e-portals (for attendance) and automatically marks absent  for the students who are not in class and uploads the data after the verification of the faculty.
-      ➼ Using 3D facial recognition it enhances attendance more accuracy, secure, and  fraud-prevention.
+       This facial recognition system uses camera to capture images of the students using 3D depth and motion analysis and matches those images with the students image in the database to confirm their presence.
+       The output is connected to the e-portals (for attendance) and automatically marks absent  for the students who are not in class and uploads the data after the verification of the faculty.
+       Using 3D facial recognition it enhances attendance more accuracy, secure, and  fraud-prevention.
        
        
 
@@ -30,12 +30,12 @@ Provide an overview of the project, its purpose, and what it aims to achieve alo
 
 List your team members along with their roles.
 
-- *SRISHANTH* - Team Leader (FACE DETECTION, FACE RECOGNTION)
-- *PRAVEEN R S* - FRONTEND(HTML,CSS)
+- *SRISHANTH P M* - Team Leader (FACE DETECTION, FACE RECOGNTION)
+- *PRAVEEN R S* - FRONTEND(HTML,CSS,BOOTSTRAP)
 - *PRANAV A* - FRONTEND(HTML,CSS)
 - *SADHANAMATHI V* - Role
 - *SUBIKSHA R* - (FACE DETECTION, FACE RECOGNTION)
-- *PAVITHRA MIRUNAALINI G * - BACKEND(DJANGO)
+- *PAVITHRA MIRUNAALINI G * - BACKEND(DJANGO,POSTGRESQL)
 
 
 ![Team Photo](media/team-photo.png)
@@ -46,7 +46,7 @@ List your team members along with their roles.
 
 List the technologies and tools used in the project. For example:
 
-- *Frontend:* HTML, CSS,
+- *Frontend:* HTML, CSS,BOOTSTRAP
 - *Backend:*  Django
 - *Database:* Postgresql
 - *Other Tools:* OpenCV, Git, DeepFace,Mediapipe,MiDaS,dlib
@@ -138,4 +138,3 @@ Images to demonstrate the user interface:
 [Watch the project on YouTube](insert-youtube-link-here)
 
 ---
-hello
