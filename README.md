@@ -35,7 +35,7 @@ List your team members along with their roles.
 - *PRANAV A* - FRONTEND(HTML,CSS)
 - *SADHANAMATHI V* - Role
 - *SUBIKSHA R* - (FACE DETECTION, FACE RECOGNTION)
-- *PAVITHRA MIRUNAALINI G * - BACKEND(DJANGO,POSTGRESQL)
+- *PAVITHRA MIRUNALINI G * - BACKEND(DJANGO,POSTGRESQL)
 
 
 ![Team Photo](media/team-photo.png)
@@ -62,15 +62,15 @@ Follow these steps to clone and run the application locally.
 1. Install [Python](https://www.python.org/downloads/).
 2. Install [Git](https://git-scm.com/).
 3. Clone this repository:
-   bash
+   ```
    git clone https://github.com/PYEXPO25/T037_NEXUSTECH.git
-   
+   ```   
 
 ### Installation
 
 1. Navigate to the project directory:
    bash
-   cd repository-name
+   cd T037_NEXUSTECH
    
 2. Create a virtual environment:
    bash
@@ -82,6 +82,7 @@ Follow these steps to clone and run the application locally.
      venv\Scripts\activate
      
    - On macOS/Linux:
+
      bash
      source venv/bin/activate
      
@@ -98,13 +99,13 @@ Follow these steps to clone and run the application locally.
 
 ## Start the Application
 
-1. Run the Flask application:
+1. Run the Django application:
    bash
-   flask run
+   Django run
    
 2. Open your browser and navigate to:
    
-   http://127.0.0.1:5000/
+   http://127.0.0.1:8000/
    
 
 ---
