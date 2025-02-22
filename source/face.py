@@ -36,7 +36,7 @@ for filename in os.listdir(REFERENCE_DIR):
         img_path = os.path.join(REFERENCE_DIR, filename)
         try:
             image = face_recognition.load_image_file(img_path)
-            encoding = face_recognition.face_encodings(image, model="hog", num_jitters=10)  # More jitter for better accuracy
+            encoding = face_recognition.face_encodings(image, model="hog", num_jitters=10)
             if encoding:
                 known_face_encodings.append(encoding[0])
                 known_face_names.append(person_name)
@@ -54,18 +54,18 @@ while cap.isOpened():
         break
 
     frame_count += 1
-    if frame_count % 3 != 0:  # Process every 3rd frame to reduce inconsistencies
+    if frame_count % 3 != 0:
         continue
 
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     face_locations = face_recognition.face_locations(rgb_frame, model="hog")
-    face_encodings = face_recognition.face_encodings(rgb_frame, face_locations, num_jitters=2)  # Lower jitter for speed
+    face_encodings = face_recognition.face_encodings(rgb_frame, face_locations, num_jitters=2)  
 
     results = face_mesh.process(rgb_frame) if len(face_locations) > 0 else None
 
     for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
-        matches = face_recognition.compare_faces(known_face_encodings, face_encoding, tolerance=0.4)  # Higher tolerance
+        matches = face_recognition.compare_faces(known_face_encodings, face_encoding, tolerance=0.4) 
         face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
         best_match_index = np.argmin(face_distances) if len(face_distances) > 0 else -1
         name = "Unmatched"
