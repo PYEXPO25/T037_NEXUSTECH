@@ -1,0 +1,31 @@
+# CORE LIBRARIES
+numpy==1.24.3
+opencv-python==4.7.0.72
+pandas==2.0.1
+
+# FACIAL RECOGNITION AND MULTI-FACE DETECTION
+deepface==0.0.79
+dlib==19.24.2
+face_recognition==1.3.0
+retina-face==0.0.5
+mediapipe==0.10.3
+
+# 3D DEPTH ESTIMATION AND ANTI-SPOOFING
+torch==2.1.0
+torchvision==0.16.0
+midas==1.1.1
+scipy==1.10.1
+
+# BACKEND AND API
+fastapi==0.103.0
+uvicorn==0.23.2
+jinja2==3.1.2
+
+# DATABASE (postgreSQL)
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+
+# MULTITHREADING AND LOGGING
+asyncio==3.4.3
+multiprocessing-logging==0.3.1
+python-dotenv==1.0.0
