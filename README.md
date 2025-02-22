@@ -38,7 +38,7 @@ List your team members along with their roles.
 - *PAVITHRA MIRUNALINI G * - BACKEND(DJANGO,POSTGRESQL)
 
 
-![Team Photo](media/team-photo.png)
+![Team Photo](media/"C:\Users\SADHANA MATHI\Downloads\team-photo.png")
 
 ---
 
