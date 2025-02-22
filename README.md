@@ -69,29 +69,29 @@ Follow these steps to clone and run the application locally.
 ### Installation
 
 1. Navigate to the project directory:
-   bash
+   ```
    cd T037_NEXUSTECH
    
 2. Create a virtual environment:
-   bash
+   ```
    python -m venv venv
    
 3. Activate the virtual environment:
    - On Windows:
-     bash
+    ```
      venv\Scripts\activate
      
    - On macOS/Linux:
 
-     bash
+     ```
      source venv/bin/activate
      
 4. Install dependencies:
-   bash
+  ```
    pip install -r requirements.txt
    
 5. Navigate to source
-   bash
+   ```
    cd source
    
 
@@ -100,7 +100,7 @@ Follow these steps to clone and run the application locally.
 ## Start the Application
 
 1. Run the Django application:
-   bash
+   ```
    Django run
    
 2. Open your browser and navigate to:
