@@ -26,7 +26,7 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.5], std=[0.5])
 ])
 
-REFERENCE_DIR = "reference_faces"
+REFERENCE_DIR = "C:\Users\Srish\OneDrive\Desktop\T037_NEXUS_TECH\T037_NEXUSTECH\source\reference_faces"
 known_face_encodings = []
 known_face_names = []
 
