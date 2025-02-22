@@ -15,7 +15,7 @@ PROBLEM STATEMENT:
 
 ## Overview
 
-Provide an overview of the project, its purpose, and what it aims to achieve along with proposed solution
+OVERVIEW,PURPOSE,PROPOSED SOLUTION:
        This facial recognition system uses camera to capture images of the students using 3D depth and motion analysis and matches those images with the students image in the database to confirm their presence.
        The output is connected to the e-portals (for attendance) and automatically marks absent  for the students who are not in class and uploads the data after the verification of the faculty.
        Using 3D facial recognition it enhances attendance more accuracy, secure, and  fraud-prevention.
