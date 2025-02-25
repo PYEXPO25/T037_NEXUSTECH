@@ -10,11 +10,11 @@ from PIL import Image
 # Initialize Face Mesh once
 mp_face_mesh = mp.solutions.face_mesh
 face_mesh = mp_face_mesh.FaceMesh(
-    static_image_mode=False,
-    max_num_faces=100,
-    refine_landmarks=True,
-    min_detection_confidence=0.8,
-    min_tracking_confidence=0.8
+    static_image_mode = False,
+    max_num_faces = 100,
+    refine_landmarks = True,
+    min_detection_confidence = 0.8,
+    min_tracking_confidence = 0.8
 )
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -23,7 +23,7 @@ midas = torch.hub.load("intel-isl/MiDaS", "MiDaS_small", trust_repo=True).to(dev
 transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Resize((384, 384)),
-    transforms.Normalize(mean=[0.5], std=[0.5])
+    transforms.Normalize(mean = [0.5], std = [0.5])
 ])
 
 REFERENCE_DIR = "C:\Users\Srish\OneDrive\Desktop\T037_NEXUS_TECH\T037_NEXUSTECH\source\reference_faces"
