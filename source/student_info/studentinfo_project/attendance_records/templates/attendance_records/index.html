@@ -10,6 +10,7 @@
         body {
             background: linear-gradient(45deg, #6a11cb, #2575fc);
             color: white;
+            font-family: Arial, sans-serif;
         }
         .container {
             background: rgba(255, 255, 255, 0.1);
@@ -20,6 +21,7 @@
         .table {
             background: rgba(255, 255, 255, 0.2);
             color: white;
+            border-collapse: collapse;
         }
         .present { 
             background-color: #28a745 !important; 
@@ -31,73 +33,80 @@
             color: white !important;
             transition: all 0.3s ease;
         }
-        .toggle-btn {
-            transition: transform 0.2s ease-in-out;
-        }
-        .toggle-btn:active {
-            transform: scale(1.1);
+        .default-cell {
+            background: rgba(255, 255, 255, 0.2);
+            color: white !important;
         }
     </style>
 </head>
 <body>
     <div class="container mt-4">
-        <h2 class="text-center">Attendance Tracking System</h2>
-        <table class="table table-bordered text-center">
-            <thead>
-                <tr>
-                    <th>S.NO.</th>
-                    <th>STUDENT NAME</th>
-                    <th>ROLL NUMBER</th>
-                    <th>DATE</th>
-                    <th colspan="8">PERIODS (1-8)</th>
-                    <th>TOTAL PRESENT</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for student in students %}
-                <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ student.name }}</td>
-                    <td>{{ student.roll_number }}</td>
-                    <td><input type="date" class="form-control" name="date" value="{{ student.date }}"></td>
-                    {% for period in student.attendance %}
-                    <td><button class="btn btn-sm toggle-btn btn-light" data-student-id="{{ student.id }}" data-period="{{ forloop.counter }}">{{ period }}</button></td>
-                    {% endfor %}
-                    <td class="total-present">{{ student.total_present }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+        <h2 class="text-center mb-3">Attendance Tracking System</h2>
+        <a href="{% url 'attendance_records:take_attendance' %}">
+            <button type="button" class="btn btn-success">Start Attendance</button>
+        </a>
 
-    <script>
-        document.querySelectorAll('.toggle-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                let studentId = this.getAttribute('data-student-id');
-                let period = this.getAttribute('data-period');
-                let newStatus = this.textContent === 'P' ? 'A' : 'P';
-                
-                fetch("/update_attendance/", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRFToken": "{{ csrf_token }}"
-                    },
-                    body: JSON.stringify({
-                        student_id: studentId,
-                        period: period,
-                        status: newStatus
-                    })
-                }).then(response => response.json()).then(data => {
-                    if (data.success) {
-                        button.textContent = newStatus;
-                        button.classList.toggle('present', newStatus === 'P');
-                        button.classList.toggle('absent', newStatus === 'A');
-                        button.closest('tr').querySelector('.total-present').textContent = data.total_present;
-                    }
-                });
-            });
-        });
-    </script>
+        <div class="alert alert-light text-center fw-bold" role="alert">
+            Date: <span id="currentDate"></span>
+        </div>
+
+        <!-- Static Attendance Table -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>S.NO.</th>
+                        <th>STUDENT NAME</th>
+                        <th>ROLL NUMBER</th>
+                        <th>Period 1</th>
+                        <th>Period 2</th>
+                        <th>Period 3</th>
+                        <th>Period 4</th>
+                        <th>Period 5</th>
+                        <th>Period 6</th>
+                        <th>Period 7</th>
+                        <th>Period 8</th>
+                        <th>Total Present</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.roll_number }}</td>
+
+        <td class="{% if student.attendance.period1 %}present{% else %}absent{% endif %}">
+            {% if student.attendance.period1 %}P{% else %}A{% endif %}
+        </td>
+        <td class="{% if student.attendance.period2 %}present{% else %}absent{% endif %}">
+            {% if student.attendance.period2 %}P{% else %}A{% endif %}
+        </td>
+        <td class="{% if student.attendance.period3 %}present{% else %}absent{% endif %}">
+            {% if student.attendance.period3 %}P{% else %}A{% endif %}
+        </td>
+        <td class="{% if student.attendance.period4 %}present{% else %}absent{% endif %}">
+            {% if student.attendance.period4 %}P{% else %}A{% endif %}
+        </td>
+        <td class="{% if student.attendance.period5 %}present{% else %}absent{% endif %}">
+            {% if student.attendance.period5 %}P{% else %}A{% endif %}
+        </td>
+        <td class="{% if student.attendance.period6 %}present{% else %}absent{% endif %}">
+            {% if student.attendance.period6 %}P{% else %}A{% endif %}
+        </td>
+        <td class="{% if student.attendance.period7 %}present{% else %}absent{% endif %}">
+            {% if student.attendance.period7 %}P{% else %}A{% endif %}
+        </td>
+        <td class="{% if student.attendance.period8 %}present{% else %}absent{% endif %}">
+            {% if student.attendance.period8 %}P{% else %}A{% endif %}
+        </td>
+        <td>{{ student.attendance.total_present }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+<!-- JavaScript for Date -->
+<script>
+    document.getElementById("currentDate").innerText = new Date().toLocaleDateString();
+</script>
 </body>
-</html>
+</html>                    
